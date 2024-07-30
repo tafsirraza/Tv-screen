@@ -1,0 +1,107 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #666666, #333333);
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.tv-container {
+    width: 600px;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #333;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border: 10px solid #4b3f30;
+    overflow: hidden;
+    transform: perspective(800px) rotateX(-10deg);
+}
+
+.tv-frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #4b3f30;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.tv-screen {
+    width: 90%;
+    aspect-ratio: 4 / 3;
+    background-color: #000;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease, opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.tv-screen.off {
+    background-color: #000;
+    opacity: 0.1;
+}
+
+.tv-screen .content {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.tv-screen.on .content {
+    opacity: 1;
+}
+
+.tv-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 10px;
+}
+
+.dial {
+    width: 50px;
+    height: 50px;
+    background-color: #999;
+    border-radius: 50%;
+    box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.2), inset 2px 2px 5px rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.dial-power {
+    background-color: #f00;
+}
+
+.dial-volume {
+    background-color: #ff9800;
+}
+
+.dial-channel {
+    background-color: #03a9f4;
+}
+
+.dial:hover {
+    transform: scale(1.1);
+}
